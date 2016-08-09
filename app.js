@@ -1,4 +1,19 @@
-var h1 = <h1>Hello world</h1>;
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+ReactDOM.render(<h1>Hello world</h1>, document.getElementById('app'));
+
+ var blog = (
+<div>
+  <img src="pics/192940u73.jpg" />
+  <h1>
+    Welcome to Dan's Blog!
+  </h1>
+  <article>
+    Wow I had the tastiest sandwich today.  I <strong>literally</strong> almost freaked out.
+  </article>
+</div>
+);
 
 var myArticle = <article></article>;
 
@@ -21,3 +36,6 @@ var p2 = <p id="small">bar</p>;
      </h1>
    </a>
  );
+ 
+ ReactDOM.render(<h1>Render me!</h1>, document.getElementById('app'));
+ 

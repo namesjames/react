@@ -37,5 +37,23 @@ var p2 = <p id="small">bar</p>;
    </a>
  );
  
- ReactDOM.render(<h1>Render me!</h1>, document.getElementById('app'));
- 
+ReactDOM.render(<h1>Render me!</h1>, document.getElementById('app'));
+
+ReactDOM.render(<h1>Render me!</h1>, document.getElementById('container'));
+
+var myList = (
+<ul>
+  <li>1
+  </li>
+	<li>2
+  </li>
+	<li>3
+  </li>
+</ul>);
+
+ReactDOM.render(
+  myList, 
+	document.getElementById('app')
+);
+
+

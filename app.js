@@ -98,3 +98,16 @@ ReactDOM.render(
 	pi,
 	document.getElementById('app')
 );
+
+var math = (
+<h1>2+3={2+3}</h1>);
+
+ReactDOM.render(math, document.getElementById('app'));
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var theBestString = 'tralalalala i am da best';
+
+ReactDOM.render(<h1>{theBestString}</h1>, document.getElementById('app'));
+

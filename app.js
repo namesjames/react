@@ -143,7 +143,6 @@ var img = (
 }
 
 function coinToss () {
-  // Randomly return either 'heads' or 'tails'.
   return Math.random() < 0.5 ? 'heads' : 'tails';
 }
 
@@ -158,3 +157,25 @@ ReactDOM.render(
 	img, 
 	document.getElementById('app')
 );
+
+var judgmental = Math.random() < 0.5;
+
+var favoriteFoods = (
+  <div>
+    <h1>My Favorite Foods</h1>
+    <ul>
+      <li>Sushi Burrito</li>
+      <li>Rhubarb Pie</li>
+      { !judgmental && <li>Nacho Cheez Straight Out The Jar</li> }
+      <li>Broiled Grapefruit</li>
+    </ul>
+  </div>
+);
+
+var people = ['Rowe', 'Prevost', 'Gare'];
+
+var peopleLIs = people.map(function(person){
+	 return <li>{person}</li>;
+});
+ReactDOM.render(<ul>{peopleLIs}</ul>,document.getElementById('app'));
+

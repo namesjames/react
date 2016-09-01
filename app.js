@@ -304,3 +304,21 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
+var fiftyFifty = Math.random() < 0.5;
+
+var TonightsPlan = React.createClass({
+  render: function () {
+    var fiftyFifty;
+    if fiftyFifty = true
+    } else {
+      task = "run around"
+    }
+
+    return <h1>Tonight I'm going out WOOO</h1>;
+  }
+});
+
+ReactDOM.render(
+	<TonightsPlan />,
+	document.getElementById('app')
+);

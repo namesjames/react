@@ -303,3 +303,40 @@ ReactDOM.render(
   <Friend />,
   document.getElementById('app')
 );
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var fiftyFifty = Math.random() < 0.5;
+
+// React.createClass call begins here:
+var TonightsPlan = React.createClass({
+  render: function () {
+
+    if (fiftyFifty = true) {
+      return <h1>Tonight I'm going out WOOO</h1>;
+    } else {
+      return <h1>Tonight I'm going to bed WOOO</h1>;
+    }
+  }
+});
+
+ReactDOM.render(
+	<TonightsPlan />,
+	document.getElementById('app')
+);
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var MyName = React.createClass({
+	// name property goes here:
+name: 'James',
+
+  render: function () {
+    return <h1>My name is {this.name}</h1>;
+  }
+});
+
+ReactDOM.render(<MyName />, document.getElementById('app'));
+

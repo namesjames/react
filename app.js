@@ -391,3 +391,31 @@ var NavBar = React.createClass({
 });
 
 module.exports = NavBar;
+
+var PropsDisplayer = React.createClass({
+  render: function () {
+  	var stringProps = JSON.stringify(this.props);
+
+    return (
+      <div>
+        <h1>CHECK OUT MY PROPS OBJECT</h1>
+        <h2>{stringProps}</h2>
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <PropsDisplayer myProp="Hello" />,
+  document.getElementById('app')
+  
+  var Greeting = React.createClass({
+  render: function () {
+    return <h1></h1>;
+  }
+});
+
+ReactDOM.render(
+  <Greeting firstName='Groberta' />, 
+  document.getElementById('app')
+);

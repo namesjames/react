@@ -419,3 +419,46 @@ ReactDOM.render(
   <Greeting firstName='Groberta' />, 
   document.getElementById('app')
 );
+
+
+var Greeting = React.createClass({
+  render: function () {
+    return <h1>Hi there, {this.props.firstName}!</h1>;
+  }
+});
+
+ReactDOM.render(
+  <Greeting firstName='James' />, 
+  document.getElementById('app')
+);
+
+var Greeting = React.createClass({
+  render: function () {
+    return <h1>Hi there, {this.props.name}!</h1>;
+  }
+});
+
+module.exports = Greeting;
+
+var Greeting = require('./Greeting');
+
+var App = React.createClass({
+  render: function () {
+    return (
+      <div>
+        <h1>
+          Hullo and, "Welcome to The Newzz," "On Line!"
+        </h1>
+        <Greeting name="James" />
+        <article>
+          Latest newzz:  where is my phone?
+        </article>
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <App />, 
+  document.getElementById('app')
+);

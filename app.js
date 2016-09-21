@@ -462,3 +462,71 @@ ReactDOM.render(
   <App />, 
   document.getElementById('app')
 );
+
+var App = React.createClass({
+  render: function () {
+    return (
+      <div>
+        <h1>
+          Hullo and, "Welcome to The Newzz," "On Line!"
+        </h1>
+        <Greeting name="Alison" signedIn={true} />
+        <article>
+          Latest:  where is my phone?
+        </article>
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <App />, 
+  document.getElementById('app')
+);
+
+var Greeting = React.createClass({
+  render: function () {
+  	if (this.props.signedIn == false) {
+  	  return <h1>GO AWAY</h1>;
+  	} else {
+  	  return <h1>Hi there, {this.props.name}!</h1>;
+  	}
+  }
+});
+
+module.exports = Greeting;
+
+var Welcome = React.createClass({
+  render: function () {
+    if (this.props.name == 'Wolfgang Amadeus Mozart') {
+      return (
+      	<h2>
+      	  hello sir it is truly great to meet you here on the web
+      	</h2>
+      );
+    } else {
+      return (
+      	<h2>
+      	  WELCOME "2" MY WEB SITE BABYYY!!!!!
+      	</h2>
+      );
+    }
+  }
+});
+
+module.exports = Welcome;
+
+  handleEvent: function () {
+    alert('I am an event handler.'
+    + '  If you see this message,'
+    + ' then I have been called.');
+  },
+
+  render: function () {
+    return (
+      <h1 onClick={this.handleEvent}>
+        Hello world
+      </h1>
+    );
+  }
+});

@@ -530,3 +530,33 @@ module.exports = Welcome;
     );
   }
 });
+
+function talk () {
+  for (var speech = '', i = 0; i < 10000; i++) {
+    speech += 'blah,';
+  }
+  alert(speech);
+}
+
+var Talker = React.createClass({
+  render: function () {
+    return <Button onClick={this.talk}/>;
+  }
+});
+
+ReactDOM.render(
+  <Talker />,
+  document.getElementById('app')
+);
+
+var Button = React.createClass({
+  render: function () {
+    return (
+      <button>
+        Click me!
+      </button>
+    );
+  }
+});
+
+module.exports = Button;

@@ -531,16 +531,19 @@ module.exports = Welcome;
   }
 });
 
-function talk () {
-  for (var speech = '', i = 0; i < 10000; i++) {
-    speech += 'blah,';
-  }
-  alert(speech);
-}
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Button = require('./Button');
 
 var Talker = React.createClass({
+  talk: function () {
+  for (var speech = '', i = 0; i < 10000; i++) {
+    speech += 'blah ';
+  }
+  alert(speech);
+},
   render: function () {
-    return <Button onClick={this.talk}/>;
+    return <Button talk={this.talk}/>;
   }
 });
 
@@ -552,7 +555,7 @@ ReactDOM.render(
 var Button = React.createClass({
   render: function () {
     return (
-      <button>
+      <button onClick={this.props.talk}>
         Click me!
       </button>
     );
@@ -560,3 +563,9 @@ var Button = React.createClass({
 });
 
 module.exports = Button;
+
+  render: function () {
+    return <Button talk={this.talk} />;
+  }
+});
+

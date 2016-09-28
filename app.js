@@ -569,3 +569,60 @@ module.exports = Button;
   }
 });
 
+var Talker = React.createClass({
+  handleClick: function () {
+    for (var speech = '', i = 0; i < 10000; i++) {
+      speech += 'blah ';
+    }
+    alert(speech);
+  },
+  
+  render: function () {
+    return <Button onClick={this.handleClick} />;
+  }
+});
+
+ReactDOM.render(
+  <Talker />,
+  document.getElementById('app')
+);
+
+var BigButton = React.createClass({
+  render: function () {
+    console.log(this.props.children);
+    return <button>Yo I am big</button>;
+  }
+});
+
+var App = React.createClass({
+  render: function () {
+    return (
+      <div>
+        <List type='Living Musician'>
+          <li>Sachiko M</li>
+          <li>Harvey Sid Fisher</li>
+        </List>
+        <List type='Living Cat Musician'>
+          <li>Nora the Piano Cat</li>
+        </List>
+      </div>
+    );
+  }
+});
+
+var List = React.createClass({
+  render: function () {
+    var titleText = 'Favorite ' + this.props.type;
+    if (this.props.children instanceof Array) {
+    	titleText += 's';
+    }
+    return (
+      <div>
+        <h1>{titleText}</h1>
+        <ul>{this.props.children}</ul>
+      </div>
+    );
+  }
+});
+
+module.exports = List;

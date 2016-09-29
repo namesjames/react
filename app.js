@@ -626,3 +626,35 @@ var List = React.createClass({
 });
 
 module.exports = List;
+
+var Button = React.createClass({
+
+  getDefaultProps: function () {
+    return { text: 'I am a button' };
+  },
+
+  render: function () {
+    return (
+      <button>
+        {this.props.text}
+      </button>
+    );
+  }
+});
+
+ReactDOM.render(
+  <Button text="" />, 
+  document.getElementById('app')
+);
+
+var Moody = React.createClass({
+  getInitialState: function () {
+    return { mood: 'decent' };
+  },
+
+  render: function () {
+    return <div></div>;
+  }
+});
+
+<Moody />

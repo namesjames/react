@@ -658,3 +658,48 @@ var Moody = React.createClass({
 });
 
 <Moody />
+
+var App = React.createClass({
+	getInitialState: function () {
+		return { title: 'Best App' };
+},
+
+  render: function () {
+    return (
+      <h1>
+        Wow this entire app is just an h1.
+      </h1>
+    );
+  }
+});
+
+var App = React.createClass({
+	getInitialState: function () {
+		return { title: 'Best App' };
+},
+
+  render: function () {
+    return (
+      <h1>
+        {this.state.title}
+      </h1>
+    );
+  }
+});
+
+ReactDOM.render(<App />, document.getElementById('app'));
+
+var Example = React.createClass({
+  getInitialState: function () {
+    return {
+      mood:   'great',
+      hungry: false
+    };
+  },
+
+  render: function () {
+    return <div></div>;
+  }
+});
+
+<Example />

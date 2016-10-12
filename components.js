@@ -37,3 +37,60 @@ var Child = React.createClass({
 });
 
 module.exports = Child;
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+var ChildClass = require('./ChildClass');
+
+var ParentClass = React.createClass({
+  getInitialState: function () {
+    return { totalClicks: 0 };
+  },
+
+  handleClick: function () {
+    var total = this.state.totalClicks;
+
+    this.setState(
+      { totalClicks: total + 1 }
+    );
+  }
+});
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+var ChildClass = require('./ChildClass');
+
+var ParentClass = React.createClass({
+  getInitialState: function () {
+    return { totalClicks: 0 };
+  },
+
+  handleClick: function () {
+    var total = this.state.totalClicks;
+    this.setState(
+      { totalClicks: total + 1 }
+    );
+  },
+
+  render: function () {
+    return (
+      <ChildClass onClick={this.handleClick} />
+    );
+  }
+});
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var ChildClass = React.createClass({
+  render: function () {
+    return (
+
+      <button onClick={this.props.onClick}>
+        Click Me!
+      </button>
+    );
+  }
+});
+
+module.exports = ChildClass;

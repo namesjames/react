@@ -132,7 +132,9 @@ var Child = React.createClass({
         <h1>
           Hey my name is {this.props.name}!
         </h1>
-        <select id="great-names">
+         <select 
+          id="great-names" 
+          onChange={this.handleChange} >
           <option value="Frarthur">
             Frarthur
           </option>
@@ -171,7 +173,7 @@ var Parent = React.createClass({
     return (
     	<Child 
     		name={this.state.name} 
-        onChange={this.changeName} />
+        	onChange={this.changeName} />
     );
   }
 });

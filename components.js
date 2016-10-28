@@ -200,3 +200,32 @@ var Sibling = React.createClass({
 });
 
 module.exports = Sibling;
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var styleMe = <h1 style={{ background: 'lightblue', color: 'darkred' }}>Please style me!  I am so bland!</h1>;
+
+ReactDOM.render(
+	styleMe, 
+	document.getElementById('app')
+);
+
+var React = require('react');
+
+var styles = {
+  color: 'darkcyan',
+  background: 'mintcream'
+};
+
+var StyledClass = React.createClass({
+  render: function () {
+    return (
+      <h1 style={styles}>
+        Hello world
+      </h1>
+    );
+  }
+});
+
+module.exports = StyledClass;

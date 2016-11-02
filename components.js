@@ -245,3 +245,83 @@ ReactDOM.render(
 	styleMe, 
 	document.getElementById('app')
 );
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+var AttentionGrabber = require('./AttentionGrabber');
+var styles = require('./styles')
+var divStyle = {
+  background: styles.background,
+  height:     '100%' 
+};
+var Home = React.createClass({
+  render: function () {
+    return (
+      <div style={divStyle}>
+        <AttentionGrabber />
+        <footer>THANK YOU FOR VISITING MY HOMEPAGE!</footer>
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+	<Home />, 
+	document.getElementById('app')
+);
+
+var React = require('react');
+var styles = require('./styles')
+var h1Style = {
+  color:      styles.color,
+  fontSize:   styles.fontSize,
+  fontFamily: styles.fontFamily,
+  padding:    styles.padding,
+  margin:     0
+};
+var AttentionGrabber = React.createClass({
+	render: function () {
+		return <h1 style={h1Style}>WELCOME TO MY HOMEPAGE!</h1>;
+	}
+});
+
+module.exports = AttentionGrabber;
+
+var fontFamily = 'Comic Sans MS, Lucida Handwriting, cursive';
+var background = 'pink url("https://media.giphy.com/media/oyr89uTOBNVbG/giphy.gif") fixed';
+var fontSize   = '4em';
+var padding = '45px 0';
+var color  = 'green';
+
+module.exports = {
+  fontFamily: fontFamily,
+  background: background,
+  fontSize:   fontSize,
+  padding:    padding,
+  color:      color
+};
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+var styles = require('./facebookStyles');
+
+var divStyle = {
+  backgroundColor: styles.darkBlue,
+  color:           styles.white
+};
+
+var Wow = React.createClass({
+  render: function () {
+    return (
+      <div style={divStyle}>
+        Wow, I stole these colors from Facebook!
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+	<Wow />, 
+	document.getElementById('app')
+);
+

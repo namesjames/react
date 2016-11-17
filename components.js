@@ -409,3 +409,26 @@ ReactDOM.render(
 	<Friend />,
 	document.getElementById('app')
 );
+
+var MyComponentClass = React.createClass({
+  render: function () {
+    return <h1>{this.props.title}</h1>;
+  }
+});
+
+function MyComponentClass (props) {
+  return <h1>{props.title}</h1>;
+}
+
+var MyComponentClass = React.createClass({
+  render: function () {
+  	var title = this.props.title;
+    return <h1>{title}</h1>;
+  }
+});
+
+function MyComponentClass (props) {
+	var title = props.title;
+  return <h1>{title}</h1>;
+}
+

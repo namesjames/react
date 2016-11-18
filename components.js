@@ -432,3 +432,12 @@ function MyComponentClass (props) {
   return <h1>{title}</h1>;
 }
 
+function GuineaPigs (props) {
+	var title = props.title;
+  return       <div>
+        <h1>Cute Guinea Pigs</h1>
+        <img src={src} />
+      </div>
+}
+
+module.exports = GuineaPigs;

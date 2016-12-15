@@ -141,3 +141,57 @@ const styles = StyleSheet.create({
 })
 
 AppRegistry.registerComponent('App', () => App)
+
+import React, { Component } from 'react'
+import { AppRegistry, Image, StyleSheet } from 'react-native'
+
+class App extends Component {
+  render() {
+    return (
+      <Image
+        style={styles.image}
+        source={{uri: 'http://www.reactnativeexpress.com/logo.png'}}
+      />
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  image: {
+    width: 200,
+    height: 200,
+  },
+})
+
+AppRegistry.registerComponent('App', () => App)
+
+class App extends Component {
+  render() {
+    return (
+      <ScrollView style={styles.container}>
+        <View style={styles.boxLarge} />
+        <ScrollView horizontal>
+          <View style={styles.boxSmall} />
+          <View style={styles.boxSmall} />
+          <View style={styles.boxSmall} />
+        </ScrollView>
+        <View style={styles.boxLarge} />
+        <View style={styles.boxSmall} />
+        <View style={styles.boxLarge} />
+      </ScrollView>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  boxSmall: {
+    width: 200,
+    height: 200,
+    marginBottom: 10,
+    marginRight: 10,
+    backgroundColor: 'skyblue',
+  },
+  boxLarge: {

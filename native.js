@@ -305,3 +305,84 @@ export default class App extends Component {
     )
   }
 }
+
+import React, { Component } from 'react'
+import { AppRegistry, View, TouchableOpacity, Text, StyleSheet } from 'react-native'
+
+export default class List extends Component {
+
+  renderItem = (text, i) => {
+    const {onPressItem} = this.props
+
+    return (
+      <TouchableOpacity
+        style={styles.item}
+        onPress={() => onPressItem(i)}
+      >
+        <Text>{text}</Text>
+      </TouchableOpacity>
+    )
+  }
+
+  render() {
+    const {list} = this.props
+
+    return (
+      <View>
+        {list.map(this.renderItem)}
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  item: {
+    backgroundColor: 'whitesmoke',
+    marginBottom: 5,
+    padding: 15,
+  },
+})
+
+import React, { Component } from 'react'
+import { AppRegistry, TextInput, StyleSheet } from 'react-native'
+
+export default class Input extends Component {
+
+  state = {
+    text: '',
+  }
+
+  onChangeText = (text) => this.setState({text})
+
+  onSubmitEditing = () => {
+    const {onSubmitEditing} = this.props
+    const {text} = this.state
+
+    if (!text) return // Don't submit if empty
+
+    onSubmitEditing(text)
+    this.setState({text: ''})
+  }
+
+  render() {
+    const {onSubmitEditing, placeholder} = this.props
+    const {text} = this.state
+
+    return (
+      <TextInput
+        style={styles.input}
+        value={text}
+        placeholder={placeholder}
+        onChangeText={this.onChangeText}
+        onSubmitEditing={this.onSubmitEditing}
+      />
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  input: {
+    padding: 15,
+    height: 50,
+  },
+})
